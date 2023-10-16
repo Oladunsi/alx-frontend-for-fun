@@ -1,7 +1,19 @@
 #!/usr/bin/python3
 
 """A script that converts a markdown file and then 
-    generates a html file as a new file"""
+    generates a html file as a new file
+
+    Usage:
+        ./markdown2html.py <input_file> <output_file>
+
+    Arguments:
+        source_FIle:     the path to the markdown
+        Generated_file:  the path to the generated html code
+
+    Example:
+        ./markdown2html.py README.md README.html
+
+    """
 
 import sys
 import os
@@ -10,6 +22,9 @@ import hashlib
 
 
 def markdown2html(source_file_name, generated_file_name):
+    """
+        converts markdown file into html
+    """
     if os.path.exists(source_file_name) and os.path.isfile(source_file_name) == False:
         print("Missing {}".format(source_file_name))
         sys.exit(1)
