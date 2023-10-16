@@ -6,11 +6,11 @@
 import sys
 import os
 import re
-import haslib
+import hashlib
 
 
 def markdown2html(source_file_name, generated_file_name):
-    if os.path.exist(source_file_name) and os.path.isfile(source_file_name) == False:
+    if os.path.exists(source_file_name) and os.path.isfile(source_file_name) == False:
         print("Missing {}".format(source_file_name))
         sys.exit(1)
 
@@ -87,7 +87,7 @@ def markdown2html(source_file_name, generated_file_name):
                         html.write('</p>\n')
                         paragraph = False
                 if len(line) > 1:
-                    html.write(line)
+                    html.write("\n" + line)
             if ul_start:
                 html.write('</ul>\n')
             if ol_start:
@@ -96,12 +96,12 @@ def markdown2html(source_file_name, generated_file_name):
                 html.write('</p>\n')
 
 
-if __name__ = "__main__":
-    if sys.argv != 3:
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
         print("Usage: ./markdown2html.py <input_file> <output_file>", file=sys.stderr)
         sys.exit(1)
         
     input_file = sys.argv[1]
     output_file = sys.argv[2]
-    markdown2html(input_file, output_file)    
-    sys.exit(0)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     )
+    markdown2html(input_file, output_file)
+    # sys.exit(0)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        )
