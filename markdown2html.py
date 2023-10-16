@@ -24,7 +24,6 @@ def markdown2html(source_file_name, generated_file_name):
                 line = line.replace('**', '</b>', 1)
                 line = line.replace('__', '<em>', 1)
                 line = line.replace('__', '</em>', 1)
-
                 # handling md5
                 md5 = re.findall(r'\[\[.+?\]\]', line)
                 md5_inner = re.findall(r'\[\[(.+?)\]\]', line)
